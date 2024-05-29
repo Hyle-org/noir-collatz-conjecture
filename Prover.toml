@@ -1,0 +1,11 @@
+version = 1
+initial_state = [0, 0, 0, 24]
+next_state = [0, 0, 0, 12]
+origin_len = 0
+origin = ""
+caller_len = 0
+caller = ""
+block_number = 0
+block_time = 0
+tx_hash = [0, 0, 0, 0] 
+program_outputs = "Any output heehee"
