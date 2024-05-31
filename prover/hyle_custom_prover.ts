@@ -15,7 +15,9 @@ const verificationKey = await backend.getVerificationKey();
 // Proving
 const input = {
     version: process.env.version,
+    initial_state_len: process.env.initial_state_len,
     initial_state: JSON.parse(process.env.initial_state as string),
+    next_state_len: process.env.next_state_len,
     next_state: JSON.parse(process.env.next_state as string),
     origin_len: process.env.origin_len,
     origin: process.env.origin,
@@ -23,6 +25,7 @@ const input = {
     caller_len: process.env.caller_len,
     block_number: process.env.block_number,
     block_time: process.env.block_time,
+    tx_hash_len: process.env.tx_hash_len,
     tx_hash: JSON.parse(process.env.tx_hash as string),
     program_outputs: process.env.program_outputs
 };

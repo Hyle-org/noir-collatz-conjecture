@@ -1,14 +1,17 @@
 fn main(
     version: pub u32,
-    initial_state: pub [u8; 4], // TODO: size fixed on 4 bytes. We might want to change it ?
-    next_state: pub [u8; 4], // TODO: size fixed on 4 bytes. We might want to change it ?
+    initial_state_len: pub u32,
+    initial_state: pub [u8; 4],
+    next_state_len: pub u32,
+    next_state: pub [u8; 4],
     origin_len: pub u8,
     origin: pub str<0>,
     caller_len: pub u8,
     caller: pub str<0>,
     block_number: pub u64,
     block_time: pub u64,
-    tx_hash: pub [u8; 4], // TODO: size fixed on 4 bytes. We might want to change it ?
+    tx_hash_len: pub u32,
+    tx_hash: pub [u8; 4],
     program_outputs: pub str<17>
 ) {
     let collatz_response = compute_collatz(initial_state);
@@ -19,12 +22,15 @@ fn main(
         assert(next_state == collatz_response);
     }
     assert(version == 1);
+    assert(initial_state_len == 4);
+    assert(next_state_len == 4);
     assert(origin_len == 0);
     assert(origin == "");
     assert(caller_len == 0);
     assert(caller == "");
-    assert(block_number == 0);
+    assert(block_number == 1844674407370955161);
     assert(block_time == 0);
+    assert(tx_hash_len == 4);
     assert(tx_hash == [0, 0, 0, 0]);
     assert(program_outputs == "Any output heehee");
 }

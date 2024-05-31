@@ -9,8 +9,8 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "@noir-lang/backend_barretenberg": "^0.28.0",
-    "@noir-lang/noir_js": "^0.28.0",
+    "@noir-lang/backend_barretenberg": "^0.29.0",
+    "@noir-lang/noir_js": "^0.29.0",
     "dotenv": "^16.4.5"
   }
 }
