@@ -1,5 +1,5 @@
 import { BarretenbergBackend  } from '@noir-lang/backend_barretenberg';
-import { Noir } from '@noir-lang/noir_js';
+import { InputMap, Noir } from '@noir-lang/noir_js';
 import * as fs from 'fs';
 import * as dotenv from "dotenv";
 dotenv.config({ path: '../Prover.toml' });
@@ -19,16 +19,12 @@ const input = {
     initial_state: JSON.parse(process.env.initial_state as string),
     next_state_len: process.env.next_state_len,
     next_state: JSON.parse(process.env.next_state as string),
-    origin_len: process.env.origin_len,
-    origin: process.env.origin,
-    caller: process.env.caller,
-    caller_len: process.env.caller_len,
-    block_number: process.env.block_number,
-    block_time: process.env.block_time,
+    identity_len: process.env.identity_len,
+    identity: process.env.identity,
     tx_hash_len: process.env.tx_hash_len,
     tx_hash: JSON.parse(process.env.tx_hash as string),
     program_outputs: process.env.program_outputs
-};
+} as InputMap;
 const noir = new Noir(circuit, backend);
 const proof = await noir.generateProof(input);
 var jsonProof = JSON.stringify({
