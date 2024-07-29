@@ -23,6 +23,7 @@ const input = {
     identity: process.env.identity,
     tx_hash_len: process.env.tx_hash_len,
     tx_hash: JSON.parse(process.env.tx_hash as string),
+    payload_hash: JSON.parse(process.env.payload_hash as string),
     program_outputs: process.env.program_outputs
 } as InputMap;
 const noir = new Noir(circuit, backend);
