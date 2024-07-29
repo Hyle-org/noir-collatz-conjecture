@@ -6,5 +6,6 @@ next_state = [0, 0, 0, 12]
 identity_len = 0
 identity = ""
 tx_hash_len = 4
-tx_hash = [0, 0, 0, 0] 
+tx_hash = [0, 0, 0, 0]
+payload_hash = 0
 program_outputs = "Any output heehee"
